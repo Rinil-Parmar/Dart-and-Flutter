@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: MyApp(),
   ));
 }
@@ -15,14 +16,20 @@ class MyApp extends StatelessWidget {
       appBar: AppBar(
         title: Text("My First Flutter App"),
         centerTitle: true,
+        backgroundColor: Colors.purple[500],
       ),
       body: Center(
-          /*
-        child: Image(
-          image: AssetImage('assets/subasset/pic.jpg'),
-        ),
-        */
-          /*
+        /*
+      //   child: Icon(
+      //     Icons.flutter_dash,
+      //     color: Colors.amber,
+      //     size: 80.0,
+      //   //   image: AssetImage('assets/img.png'),
+      //   ),
+
+         */
+
+        /*
         child: ElevatedButton(
           child: Text('Button'),
           onPressed: () {},
@@ -37,17 +44,19 @@ class MyApp extends StatelessWidget {
         ),
 
          */
-          /*
+
+        /*
         child: FlatButton(
-          onPressed: (){
-            print("Clicked");
+          onPressed: () {
+            print('print on consol');
           },
-          child: Text("Click"),
-          color: Color.fromRGBO(255, 0, 0, 1),
+          child: Text('click Me'),
+          color: Colors.blue,
         ),
 
          */
-          /*
+
+        /*
         child: IconButton(
           icon: Icon(
             Icons.mail,
@@ -58,62 +67,59 @@ class MyApp extends StatelessWidget {
             print('Email Sent');
           },
         ),
-        */
 
-          /*
+         */
+
+        child: TextButton.icon(
+          icon: Icon(
+            Icons.camera_alt,
+            color: Colors.lightBlue[500],
+            size: 70.0,
+          ),
+          label: Text(
+            "Say Chese",
+            style: TextStyle(
+              color: Colors.blueGrey[800],
+              fontSize: 40.0,
+              letterSpacing: 1.0,
+              // backgroundColor: Colors.black54,
+            ),
+            textAlign: TextAlign.center,
+          ),
+          onPressed: () {},
+        ),
+
+        /*
+        child: Directionality(
+          textDirection: TextDirection.rtl,
           child: TextButton.icon(
             icon: Icon(
-              Icons.camera_alt,
-              color:Colors.amber,
+              Icons.account_box,
+              color:Colors.blueAccent[400],
               size: 70.0,
             ),
             label: Text(
-              "Say Chese",
+              "Account",
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.blueGrey[800],
                 fontSize: 40.0,
-                letterSpacing: 1.0,
-                backgroundColor: Colors.amber,
+                letterSpacing: 2.0,
+               // backgroundColor: Colors.redAccent,
               ),
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.start,
             ),
             onPressed: () {},
-          ),
 
-        */
+          )
+          ,
+        ),
 
-          /*
-
-          child: Directionality(
-            textDirection: TextDirection.rtl,
-            child: TextButton.icon(
-              icon: Icon(
-                Icons.account_box,
-                color:Colors.red,
-                size: 70.0,
-              ),
-              label: Text(
-                "Account",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 40.0,
-                  letterSpacing: 2.0,
-                  backgroundColor: Colors.redAccent,
-                ),
-                textAlign: TextAlign.start,
-              ),
-              onPressed: () {},
-
-            )
-            ,
-          ),
          */
-
-          ),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: Text("Button"),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.purple[500],
       ),
     );
   }
