@@ -101,11 +101,10 @@ class _MyAppState extends State<MyApp> {
 */
 
 import 'package:flutter/material.dart';
-import 'package:lab8_2/quote.dart';
-
+import 'quote.dart';
 void main() => runApp(MaterialApp(
-      home: EchoList(),
-    ));
+  home: EchoList(),
+));
 
 class EchoList extends StatefulWidget {
   const EchoList({Key? key}) : super(key: key);
@@ -126,50 +125,30 @@ class _EchoListState extends State<EchoList> {
     Quote("This is a quote 3", "Author 1"),
   ];
 
-  Widget QuoteTemplate(quote) {
+  Widget QuoteTemplate(quote){
     return Card(
       margin: EdgeInsets.fromLTRB(20, 30, 40, 10),
       child: Padding(
         padding: const EdgeInsets.all(10),
-        child: Column(
+        child:Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              quote.text,
-              style: TextStyle(
+            Text(quote.text,
+              style:TextStyle(
                 fontSize: 20,
-                color: Colors.lightGreen,
+                color: Colors.blueGrey[600],
               ),
             ),
             SizedBox(
               height: 10,
             ),
-            Text(
-              quote.author,
+            Text(quote.author,
               style: TextStyle(
                 fontSize: 20,
-                color: Colors.lightGreen,
-              ),
-            )
+                color: Colors.blueGrey[600],
+              ),)
           ],
         ),
       ),
     );
   }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.orangeAccent[100],
-      appBar: AppBar(
-        title: Text('Quotes'),
-        centerTitle: true,
-      ),
-      body: Column(
-// mainAxisAlignment: MainAxisAlignment.center,
-// crossAxisAlignment: CrossAxisAlignment.center,
-        children: quotes.map((quote) => QuoteTemplate(quote)).toList(),
-      ),
-    );
-  }
-}
